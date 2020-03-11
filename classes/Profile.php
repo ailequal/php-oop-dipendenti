@@ -102,7 +102,7 @@
 		}
 
 		public function setDateOfBirth($dateOfBirth) {
-			if (!is_string($dateOfBirth) || empty($dateOfBirth)) {
+			if (!is_string($dateOfBirth) || empty($dateOfBirth) || strlen($dateOfBirth) !== 4) {
 				die('Wrong value');
 			}
 
@@ -122,8 +122,13 @@
 			$this->town = $town;
 		}
 
+		// age
+		public function getAge($year) {
+			return $year - $this->dateOfBirth;
+		}
+
 		// getInfo
-		public function getInfo() {
+		public function getInfo($year) {
 			$name = '<h2>Name: ' . $this->name . '</h2>';
 			$surname = '<h2>Surname: ' . $this->surname . '</h2>';
 			$identityCard = '<h3>Identity card: ' . $this->identityCard . '</h3>';
@@ -131,7 +136,8 @@
 			$cellphoneNumber = '<h3>Cellphone number: ' . $this->cellphoneNumber . '</h3>';
 			$dateOfBirth = '<h3>Date of birth: ' . $this->dateOfBirth . '</h3>';
 			$town = '<h3>Town: ' . $this->town . '</h3>';
-			$info = $name . $surname . $identityCard . $fiscalCode . $cellphoneNumber . $dateOfBirth .$town;
+			$age = '<h3>Age: ' . $this->getAge($year) . '</h3>';
+			$info = $name . $surname . $identityCard . $fiscalCode . $cellphoneNumber . $dateOfBirth .$town . $age;
 			return $info;
 		}
 	}

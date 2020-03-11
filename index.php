@@ -9,9 +9,9 @@
 	$jeffBezos = new ChiefExecutiveOfficer('Jeff', 'Bezos', 'IFJ32LHSI3');
 	$jeffBezos->setFiscalCode('ER96FHSDXDSAW3');
 	$jeffBezos->setCellphoneNumber('2376899754');
-	$jeffBezos->setDateOfBirth('12-01-1964');
+	$jeffBezos->setDateOfBirth('1964');
 	$jeffBezos->setTown('Albuquerque');
 	$jeffBezos->setShares('51%');
-	echo $jeffBezos->getInfo();
+	echo $jeffBezos->getInfo(2020);
 
 ?>
