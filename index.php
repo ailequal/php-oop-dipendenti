@@ -4,18 +4,14 @@
 	require_once __DIR__ . '/classes/ChiefExecutiveOfficer.php';
 
 	// amazon team building
-	// chief executive officer
+	// ChiefExecutiveOfficer
+	var_dump('ChiefExecutiveOfficer');
 	$jeffBezos = new ChiefExecutiveOfficer('Jeff', 'Bezos', 'IFJ32LHSI3');
-
-	var_dump($jeffBezos);
-
-	var_dump($jeffBezos->getName());
-	$jeffBezos->setName('Tom');
-	var_dump($jeffBezos->getName());
-
 	$jeffBezos->setFiscalCode('ER96FHSDXDSAW3');
-	var_dump($jeffBezos->getFiscalCode());
-	$jeffBezos->setFiscalCode('RTBS5SD093JDS1');
-	var_dump($jeffBezos->getFiscalCode());
+	$jeffBezos->setCellphoneNumber('2376899754');
+	$jeffBezos->setDateOfBirth('12-01-1964');
+	$jeffBezos->setTown('Albuquerque');
+	$jeffBezos->setShares('51%');
+	echo $jeffBezos->getInfo();
 
 ?>

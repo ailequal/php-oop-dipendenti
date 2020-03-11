@@ -1,6 +1,7 @@
 <?php
 
 	class Profile {
+		// attributes
 		private $name;
 		private $surname;
 		private $identityCard;
@@ -9,6 +10,8 @@
 		private $dateOfBirth;
 		private $town;
 
+		// functions
+		// construct
 		public function __construct($_name, $_surname, $_identityCard) {
 
 			if (!is_string($_name) || empty($_name)) {
@@ -117,6 +120,19 @@
 			}
 
 			$this->town = $town;
+		}
+
+		// getInfo
+		public function getInfo() {
+			$name = '<h2>Name: ' . $this->name . '</h2>';
+			$surname = '<h2>Surname: ' . $this->surname . '</h2>';
+			$identityCard = '<h3>Identity card: ' . $this->identityCard . '</h3>';
+			$fiscalCode = '<h3>Fiscal code: ' . $this->fiscalCode . '</h3>';
+			$cellphoneNumber = '<h3>Cellphone number: ' . $this->cellphoneNumber . '</h3>';
+			$dateOfBirth = '<h3>Date of birth: ' . $this->dateOfBirth . '</h3>';
+			$town = '<h3>Town: ' . $this->town . '</h3>';
+			$info = $name . $surname . $identityCard . $fiscalCode . $cellphoneNumber . $dateOfBirth .$town;
+			return $info;
 		}
 	}
 
