@@ -15,15 +15,15 @@
 		public function __construct($_name, $_surname, $_identityCard) {
 
 			if (!is_string($_name) || empty($_name)) {
-				die('Wrong value');
+				throw new Exception('Wrong value');
 			}
 
 			if (!is_string($_surname) || empty($_surname)) {
-				die('Wrong value');
+				throw new Exception('Wrong value');
 			}
 
 			if (!is_string($_identityCard) || empty($_identityCard) || strlen($_identityCard) !== 10) {
-				die('Wrong value');
+				throw new Exception('Wrong value');
 			}
 
 			$this->name = $_name;
@@ -38,7 +38,7 @@
 
 		public function setName($name) {
 			if (!is_string($name) || empty($name)) {
-				die('Wrong value');
+				throw new Exception('Wrong value');
 			}
 
 			$this->name = $name;
@@ -51,7 +51,7 @@
 
 		public function setSurname($surname) {
 			if (!is_string($surname) || empty($surname)) {
-				die('Wrong value');
+				throw new Exception('Wrong value');
 			}
 
 			$this->surname = $surname;
@@ -64,7 +64,7 @@
 
 		public function setIdentityCard($identityCard) {
 			if (!is_string($identityCard) || empty($identityCard) || strlen($identityCard) !== 10) {
-				die('Wrong value');
+				throw new Exception('Wrong value');
 			}
 
 			$this->identityCard = $identityCard;
@@ -77,7 +77,7 @@
 
 		public function setFiscalCode($fiscalCode) {
 			if (!is_string($fiscalCode) || empty($fiscalCode) || strlen($fiscalCode) !== 14) {
-				die('Wrong value');
+				throw new Exception('Wrong value');
 			}
 
 			$this->fiscalCode = $fiscalCode;
@@ -90,7 +90,7 @@
 
 		public function setCellphoneNumber($cellphoneNumber) {
 			if (!is_string($cellphoneNumber) || empty($cellphoneNumber) || strlen($cellphoneNumber) !== 10) {
-				die('Wrong value');
+				throw new Exception('Wrong value');
 			}
 
 			$this->cellphoneNumber = $cellphoneNumber;
@@ -103,7 +103,7 @@
 
 		public function setDateOfBirth($dateOfBirth) {
 			if (!is_string($dateOfBirth) || empty($dateOfBirth) || strlen($dateOfBirth) !== 4) {
-				die('Wrong value');
+				throw new Exception('Wrong value');
 			}
 
 			$this->dateOfBirth = $dateOfBirth;
@@ -116,7 +116,7 @@
 
 		public function setTown($town) {
 			if (!is_string($town) || empty($town)) {
-				die('Wrong value');
+				throw new Exception('Wrong value');
 			}
 
 			$this->town = $town;
