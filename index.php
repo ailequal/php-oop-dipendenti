@@ -26,5 +26,18 @@
 
 	//  Developer
 	var_dump('Developer');
+	try {
+		$lucasSmith = new Developer('Lucas', 'Smith', 'R41QA3SD8O');
+	} catch (Exception $e) {
+		echo 'Exception: ' . $e->getMessage();
+	}
+	$lucasSmith->setFiscalCode('9TR7DHGBFMCD3W');
+	$lucasSmith->setCellphoneNumber('2349800761');
+	$lucasSmith->setDateOfBirth('1995');
+	$lucasSmith->setTown('California');
+	$lucasSmith->setLanguages('HTML, CSS, JavaScript');
+	$lucasSmith->setSection('Front-end web development');
+	$lucasSmith->setInfo(2020);
+	echo $lucasSmith->getInfo();
 
 ?>
