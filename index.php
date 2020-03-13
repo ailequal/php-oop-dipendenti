@@ -2,6 +2,11 @@
 
 	require_once __DIR__ . '/classes/Profile.php';
 	require_once __DIR__ . '/classes/ChiefExecutiveOfficer.php';
+	require_once __DIR__ . '/classes/Developer.php';
+	require_once __DIR__ . '/classes/BusinessConsultant.php';
+	require_once __DIR__ . '/classes/DeliveryMan.php';
+	require_once __DIR__ . '/classes/WarehouseWorker.php';
+	require_once __DIR__ . '/classes/SystemAdministrator.php';
 
 	// amazon team building
 	// ChiefExecutiveOfficer
@@ -23,4 +28,6 @@
 		echo 'Exception: ' . $e->getMessage();
 	 }
 
+	//  Developer
+	var_dump('Developer');
 ?>

@@ -44,6 +44,15 @@
 
 			$this->shares = $shares;
 		}
+
+		// getInfo
+		public function getInfo($year) {
+			$info = parent::getInfo($year);
+			$role = '<h3>Role: ' . $this->role . '</h3>';
+			$shares = '<h3>Shares: ' . $this->shares . '</h3>';
+			$info .= $role . $shares;
+			return $info;
+		}
 	}
 
 ?>
