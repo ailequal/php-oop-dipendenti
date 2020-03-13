@@ -4,8 +4,8 @@
 
 	class ChiefExecutiveOfficer extends Profile {
 		// attributes
-		private $role;
-		private $shares;
+		protected $role;
+		protected $shares;
 		
 		// functions
 		// construct
@@ -13,7 +13,7 @@
 			parent::__construct($_name, $_surname, $_identityCard);
 
 			if (!is_string($_role) || empty($_role)) {
-				die('Wrong value');
+				throw new Exception('Wrong value');
 			}
 
 			$this->role = $_role;
@@ -26,7 +26,7 @@
 
 		public function setRole($role) {
 			if (!is_string($role) || empty($role)) {
-				die('Wrong value');
+				throw new Exception('Wrong value');
 			}
 
 			$this->role = $role;
@@ -39,19 +39,22 @@
 
 		public function setShares($shares) {
 			if (!is_string($shares) || empty($shares)) {
-				die('Wrong value');
+				throw new Exception('Wrong value');
 			}
 
 			$this->shares = $shares;
 		}
 
-		// getInfo
-		public function getInfo($year) {
-			$info = parent::getInfo($year);
+		// info
+		public function getInfo() {
+			return $this->info;
+		}
+
+		public function setInfo($year) {
+			parent::setInfo($year);
 			$role = '<h3>Role: ' . $this->role . '</h3>';
 			$shares = '<h3>Shares: ' . $this->shares . '</h3>';
-			$info .= $role . $shares;
-			return $info;
+			$this->info .= $role . $shares;
 		}
 	}
 

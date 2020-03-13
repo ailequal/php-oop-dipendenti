@@ -2,13 +2,14 @@
 
 	class Profile {
 		// attributes
-		private $name;
-		private $surname;
-		private $identityCard;
-		private $fiscalCode;
-		private $cellphoneNumber;
-		private $dateOfBirth;
-		private $town;
+		protected $name;
+		protected $surname;
+		protected $identityCard;
+		protected $fiscalCode;
+		protected $cellphoneNumber;
+		protected $dateOfBirth;
+		protected $town;
+		protected $info;
 
 		// functions
 		// construct
@@ -127,8 +128,12 @@
 			return $year - $this->dateOfBirth;
 		}
 
-		// getInfo
-		public function getInfo($year) {
+		// info
+		public function getInfo() {
+			return $this->info;
+		}
+
+		public function setInfo($year) {
 			$name = '<h2>Name: ' . $this->name . '</h2>';
 			$surname = '<h2>Surname: ' . $this->surname . '</h2>';
 			$identityCard = '<h3>Identity card: ' . $this->identityCard . '</h3>';
@@ -137,8 +142,7 @@
 			$dateOfBirth = '<h3>Date of birth: ' . $this->dateOfBirth . '</h3>';
 			$town = '<h3>Town: ' . $this->town . '</h3>';
 			$age = '<h3>Age: ' . $this->getAge($year) . '</h3>';
-			$info = $name . $surname . $identityCard . $fiscalCode . $cellphoneNumber . $dateOfBirth .$town . $age;
-			return $info;
+			$this->info = $name . $surname . $identityCard . $fiscalCode . $cellphoneNumber . $dateOfBirth .$town . $age;
 		}
 	}
 
